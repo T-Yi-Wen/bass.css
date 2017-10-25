@@ -1,0 +1,40 @@
+/*精灵图公共类*/
+.sprite:before{
+    /*内容空*/
+    content:"";
+    /*精灵图坐标 我们是以320为准的 但是这个图是以640为准的 所以要-去一半*/
+    background: url(../images/icons/jd-sprites.png) no-repeat;
+    /*同上 减去这个图片的一半大小 x轴 y轴*/
+    /*千万不要自作聪明的写上一个50% 这个百分比对应的是盒子的xy 不是图片*/
+    /*兼容移动端写法 移动端都是用的webkit内核*/
+    -webkit-background-size: 200px;
+    background-size: 200px;
+}
+/*水平垂直(xy)居中的公共类*/
+.center-xy:before,.center-self-xy{
+    /*绝对定位*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*转换:移动xy*/
+    /*兼容移动端写法*/
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+}
+/*水平(Y)居中公共类*/
+.center-y:before,.center-self-y{
+    position:absolute;
+    top: 50%;
+    /*转换:移动Y*/
+    /*兼容移动端写法*/
+    -webkit-transform: translateY(-50%) ;
+    transform: translateY(-50%);
+}
+.center-x:before,.center-self-x{
+    position:absolute;
+    left: 50%;
+    /*转换:移动X*/
+    /*兼容移动端写法*/
+    -webkit-transform: translateX(-50%) ;
+    transform: translateX(-50%) ;
+}
